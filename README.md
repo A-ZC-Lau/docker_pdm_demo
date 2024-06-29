@@ -4,7 +4,7 @@ docker build -t de_pdm .
 
 # run and otherwise
 
-docker run --name de_pdm_container -p 8080:8080 -dt -v .:/app de_pdm 
+docker run --name de_pdm_container -p 8080:8080 -dt -v .:/app de_pdm
 docker stop de_pdm_container
 docker rm de_pdm_container
 

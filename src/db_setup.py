@@ -1,8 +1,13 @@
 import sqlite3
 
 con = sqlite3.connect("test.db")
+cursor = con.cursor()
 
-con.execute("""
+con.set_trace_callback(print)
+
+cursor.execute("DROP TABLE IF EXISTS tb;")
+con.commit()
+cursor.execute("""
 		CREATE TABLE tb(
 			country VARCHAR(50),
 			country_code VARCHAR(2),
@@ -11,3 +16,5 @@ con.execute("""
 			estimated_prevalence INT
 		);
 """)
+con.commit()
+con.close()

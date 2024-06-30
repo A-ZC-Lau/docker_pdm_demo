@@ -1,8 +1,10 @@
 services:
   app:
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile.web
     container_name: de_pdm_container
-    env_file: "webapp.env"
+    env_file: ".env"
     ports:
       - 8080:8080
     volumes:
@@ -11,7 +13,9 @@ services:
       mysql:
         condition: service_healthy
   mysql:
-    image : mysql:lts
+    build: 
+      context: .
+      dockerfile: Dockerfile.db
     ports:
       - 3306:3306
     env_file: ".env"

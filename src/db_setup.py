@@ -1,11 +1,13 @@
 import mysql.connector as mc
+from db.db import Connector
 
 
-cn = mc.connect(
-	user="root", 
-	password="password", # do not do this in production
-	host="mysql",
-)
+# cn = mc.connect(
+# 	user="root", 
+# 	password=password, # do not do this in production
+# 	host="mysql",
+# )
+cn = Connector()
 cur = cn.cursor()
 cur.execute("CREATE DATABASE IF NOT EXISTS `test`;")
 cur.execute("USE `test`;")

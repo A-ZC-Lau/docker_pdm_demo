@@ -20,7 +20,7 @@ def retrieve ():
 	df = pandas.read_csv(StringIO(dc))
 	j = df.to_dict("records")
 
-	con = db.Connector()
+	con = db.Connector("test")
 	cur = con.cursor()
 
 	for row in j[0:10]:
@@ -55,7 +55,7 @@ def retrieve ():
 
 @app.get("/view")
 def view ():
-	con = db.Connector()
+	con = db.Connector("test")
 	cursor = con.cursor()
 	query = """SELECT * FROM tb LIMIT 10;"""
 	cursor.execute(query)

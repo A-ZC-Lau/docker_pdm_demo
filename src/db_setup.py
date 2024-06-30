@@ -1,20 +1,25 @@
-import sqlite3
+import mysql.connector as mc
 
-con = sqlite3.connect("test.db")
-cursor = con.cursor()
 
-con.set_trace_callback(print)
 
-cursor.execute("DROP TABLE IF EXISTS tb;")
-con.commit()
-cursor.execute("""
-		CREATE TABLE tb(
-			country VARCHAR(50),
-			country_code VARCHAR(2),
-			year INT,
-			estimated_population_number INT,
-			estimated_prevalence INT
-		);
+cn = mc.connect(
+	user="root", 
+	password="password", # do not do this in production
+	host="mysql",
+	database="test"
+)
+cur = cn.cursor()
+cur.execute("CREATE DATABASE IF NOT EXISTS `test`;")
+cur.execute("USE `test`;")
+cur.execute("DROP TABLE IF EXISTS tb;")
+cur.execute("""
+	CREATE TABLE tb(
+		country VARCHAR(50),
+		country_code VARCHAR(2),
+		year INT,
+		estimated_population_number INT,
+		estimated_prevalence INT
+	);
 """)
-con.commit()
-con.close()
+cn.commit()
+cn.close()

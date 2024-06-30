@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.2"
-content_hash = "sha256:dd31ca9eb79aafadccf9b90cc844465b773287225be4113538bcb96ce545ff4a"
+content_hash = "sha256:53c02c47dc8799820270757927a672bade88f11b0a4bb75111c8d50cd773f72a"
 
 [[package]]
 name = "annotated-types"
@@ -289,6 +289,22 @@ groups = ["default"]
 files = [
     {file = "mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8"},
     {file = "mdurl-0.1.2.tar.gz", hash = "sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"},
+]
+
+[[package]]
+name = "mysql-connector-python"
+version = "8.4.0"
+requires_python = ">=3.8"
+summary = "MySQL driver written in Python"
+groups = ["default"]
+files = [
+    {file = "mysql-connector-python-8.4.0.tar.gz", hash = "sha256:42542d131d63c78416d410fdc9e84b9acb960d715c2e7b28c57ac9577c6d8165"},
+    {file = "mysql_connector_python-8.4.0-cp311-cp311-macosx_13_0_arm64.whl", hash = "sha256:4e83fc8ed95005b171ffa36a289dac48625048263b09b56718e8395539ea07d9"},
+    {file = "mysql_connector_python-8.4.0-cp311-cp311-macosx_13_0_x86_64.whl", hash = "sha256:cd89d1c8c2d1e33e5ac2d4eac5813422c150a8427fb60a16c59be18c29dd9a94"},
+    {file = "mysql_connector_python-8.4.0-cp311-cp311-manylinux_2_17_aarch64.whl", hash = "sha256:76c13fde35a038afe50550a9af7b31b28ca3a04cce06f3030980afb20460d28c"},
+    {file = "mysql_connector_python-8.4.0-cp311-cp311-manylinux_2_17_x86_64.whl", hash = "sha256:accf10425c6af39a9595a47e7119ebcbcd7351f7df28755dbee01bca5a605b7c"},
+    {file = "mysql_connector_python-8.4.0-cp311-cp311-win_amd64.whl", hash = "sha256:cda868bb4e1641362d148f5b0d2a86188cffa2f7188831589781b13f2df6f51a"},
+    {file = "mysql_connector_python-8.4.0-py2.py3-none-any.whl", hash = "sha256:35939c4ff28f395a5550bae67bafa4d1658ea72ea3206f457fff64a0fbec17e4"},
 ]
 
 [[package]]

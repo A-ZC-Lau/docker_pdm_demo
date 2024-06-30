@@ -4,11 +4,13 @@ docker build -t de_pdm .
 
 # run and otherwise
 
-docker run --name de_pdm_container -p 8080:8080 -dt -v .:/app de_pdm
+docker-compose up -d
 
-docker stop de_pdm_container
+docker-compose stop # this just stops containers but doesn't remove them
 
-docker rm de_pdm_container
+# clean up
+
+docker-compose down # cleans up everything created by the compose
 
 # VSCode intellisense
 

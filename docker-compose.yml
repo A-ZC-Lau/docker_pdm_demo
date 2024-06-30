@@ -2,15 +2,22 @@ services:
   app:
     build: .
     container_name: de_pdm_container
+    env_file: "webapp.env"
     ports:
       - 8080:8080
     volumes:
       - .:/app
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
   mysql:
     image : mysql:lts
     ports:
       - 3306:3306
-    environment:
-      MYSQL_ROOT_PASSWORD: password
+    env_file: ".env"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 5s

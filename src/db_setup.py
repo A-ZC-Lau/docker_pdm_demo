@@ -1,12 +1,10 @@
 import mysql.connector as mc
 
 
-
 cn = mc.connect(
 	user="root", 
 	password="password", # do not do this in production
 	host="mysql",
-	database="test"
 )
 cur = cn.cursor()
 cur.execute("CREATE DATABASE IF NOT EXISTS `test`;")
@@ -20,6 +18,6 @@ cur.execute("""
 		estimated_population_number INT,
 		estimated_prevalence INT
 	);
-""")
+	""")
 cn.commit()
 cn.close()

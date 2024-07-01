@@ -8,7 +8,11 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - .:/app
+      - ./src:/app/src
+      - ./test:/app/tests
+      - ./.devcontainer:/app/.devcontainer
+      - ./pdm.lock:/app/pdm.lock
+      - ./pyproject.toml:/app/pyproject.toml
     depends_on:
       mysql:
         condition: service_healthy

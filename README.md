@@ -4,9 +4,10 @@ Docker 28.1.4
 
 # How to run
 
-1. docker-compose up -d
-2. visit http://127.0.0.1:8080/get (this will get some data from an api)
-3. visit http://127.0.0.1:8080/view (this will show the first 10 results)
+1. Because files are sync'd from local to container (through the volume in docker-compose.yml file), local needs to install pdm and install the packages `pdm install`
+2. docker-compose up -d
+3. visit http://127.0.0.1:8080/get (this will get some data from an api)
+4. visit http://127.0.0.1:8080/view (this will show the first 10 results)
 
 # docker commands
 
@@ -15,6 +16,12 @@ Docker 28.1.4
 `docker-compose stop` this just stops containers but doesn't remove them
 
 `docker-down` this cleans up everything created by "up"
+
+# docker debugging
+
+`docker build -t pdm_test -f Dockerfile.web .`
+
+`docker run -v .:/app pdm_test`
 
 # VSCode intellisense
 

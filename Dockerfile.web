@@ -17,7 +17,6 @@ COPY .devcontainer .devcontainer
 RUN apt-get update
 RUN apt-get install -y sqlite3 libsqlite3-dev
 RUN apt-get install -y mariadb-client
-RUN pdm run -v src/db_setup.py
 
 EXPOSE 8080
 
